@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Мишка - магазин вязаных вещей</title>
+</head>
+<body>
+<header class="main-header">
+  <a href="index.html" class="main-header__logo-link">
+    <img class="main-header__logo-image" src="http://placehold.it/150x100" alt="logo-brand">
+  </a>
+  <nav class="main-nav">
+    <button class="main-nav__toggle"></button>
+    <div class="main-nav__wrapper">
+      <ul class="main-nav__list site-list">
+        <li class="site-list__item"><a href="#">Каталог товаров</a></li>
+        <li class="site-list__item"><a href="form.html">Вязание на заказ</a></li>
+        <li class="site-list__item"><a href="#">Поиск по сайту</a></li>
+        <li class="site-list__item"><a href="#">Корзина пока пуста</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<main>
+  <div class="page-heading">
+    <h1 class="page-heading__title">Каталог товаров</h1>
+  </div>
+  <section class="catalog">
+    <h2 class="visually-hidden">Список товаров</h2>
+    <ul class="catalog-list">
+      <li class="catalog__item product">
+        <a href="" class="product__link">
+          <picture></picture></a>
+        <div class="product__info">
+          <h3 class="product__title"><a href="" class="product__title-link">Зайчик-попрыгайчик</a></h3>
+          <p class="product__text">Рост 30см, вес 200 г</p>
+          <div class="product__price"><span class="product__span">1 200 руб.</span><a href="" class="product__basket"></a></div>
+        </div>
+      </li>
+      <li class="catalog__item product">
+        <a href="" class="product__link">
+          <picture></picture></a>
+        <div class="product__info">
+          <h3 class="product__title"><a href="" class="product__title-link">Корзина для белья</a></h3>
+          <p class="product__text">Диаметр 15 см, высота 10 см</p>
+          <div class="product__price"><span class="product__span">690 руб.</span><a href="" class="product__basket"></a></div>
+        </div>
+      </li>
+      <li class="catalog__item product">
+        <a href="" class="product__link">
+          <picture></picture></a>
+        <div class="product__info">
+          <h3 class="product__title"><a href="" class="product__title-link">Большая корзинка для игрушек</a></h3>
+          <p class="product__text">Диаметр 30см, высота 30см</p>
+          <div class="product__price"><span class="product__span">1 500 руб.</span><a href="" class="product__basket"></a></div>
+        </div>
+      </li>
+    </ul>
+  </section>
+  <section class="creation">
+    <div class="creation__wrap-title">
+      <h2 class="creation__title">Процесс производства</h2>
+    </div>
+    <img class="creation__image" src="http://placehold.it/150x100" alt="creation-picture">
+    <p class="creation__text">По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши товары.</p>
+    <a href="" class="button">Сделать заказ</a>
+  </section>
+</main>
+<footer class="main-footer">
+    <div class="social">
+      <ul class="social-list">
+        <li class="social__item"><a href="#" class="social-link">Мы в инстаграм</a></li>
+        <li class="social__item"><a href="#" class="social-link">Мы в фейсбук</a></li>
+        <li class="social__item"><a href="#" class="social-link">Мы в твиттере</a></li>
+      </ul>
+    </div>
+  </footer>
+  <div class="modal">
+      <form class="modal__form basket-form" method="post" action="https://echo.htmlacademy.ru/">
+        <b class="basket-form__title">Добавить<br> в корзину</b>
+        <div class="basket-form__field-group">
+          <p class="basket-form__field-group-title">Выбирите размер:</p>
+          <div class="basket-form__field-group-fields">
+            <div class="basket-form__field">
+              <input type="radio" name="size" value="S" id="size1" checked="">
+              <label for="size1">S</label>
+            </div>
+            <div class="basket-form__field">
+              <input type="radio" name="size" value="M" id="size2">
+              <label for="size2">M</label>
+            </div>
+            <div class="basket-form__field">
+              <input type="radio" name="size" value="L" id="size3">
+              <label for="size3">L</label>
+            </div>
+          </div>
+        </div>
+        <button class="button basket-form__button" type="submit" name="add-basket">Добавить</button>
+      </form>
+    </div>
+</body>
+</html>
