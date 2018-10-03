@@ -1,0 +1,55 @@
+.filter {
+  padding: 30px;
+  padding-bottom: 50px;
+  &__fieldset {
+  display: flex;
+  padding: 0;
+  padding-bottom: 45px;
+  border: 0;
+  }
+  &__titles {
+  position: relative;
+  width: 100%;
+  line-height: 16px;
+  color: @aquamarine;
+  font-weight: 700;
+  text-transform: uppercase;
+  overflow: hidden;
+  &::after {
+  content: "";
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-right: -100%; 
+  right: -25px; 
+  vertical-align: middle;
+  border-top: 1px solid @aquamarine;
+  }
+  }
+}
+
+.filter__label {
+  margin-top: 25px;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 18px;
+  &--type, &--color {
+  padding-left: 64px;
+  }
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 15px 0;
+  border: 0;
+  border-bottom: 2px solid @black;
+  outline: 0;
+}
+
+.filter__fieldset--details textarea {
+  margin-top: 15px;
+  padding: 15px;
+  width: 100%;
+  border: 2px solid @grey;
+  outline: 0;
+}

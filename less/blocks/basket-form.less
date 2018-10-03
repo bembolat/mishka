@@ -1,0 +1,32 @@
+.basket-form {
+  &__title {
+  color: @grey;
+  text-align: center;
+  font-size: 15px;
+  line-height: 30px;
+  }
+  &__field-group {
+  display: flex;
+  justify-content: space-between; 
+  padding-bottom: 30px;
+  }
+}
+
+.basket-form__label {
+  display: block;
+  cursor: pointer;
+  padding: 18px 32px;
+  border: 2px solid #ececec;
+}
+
+.basket-form__input:checked + .basket-form__label {
+  border: 2px solid @aquamarine;
+}
+
+.basket-form__button {
+  display: block;
+  width: 260px;
+  background-color: @aquamarine;
+  color: white;
+  border: none;
+}

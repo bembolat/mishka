@@ -1,8 +1,8 @@
 @font-face {
   font-family: "Open Sans";
   font-display: swap;
-  src: url("../fonts/opensans.woff2") format("woff2"),
-    url("../fonts/opensans.woff") format("woff");
+  src: url("../fonts/OpenSans-Regular.woff2") format("woff2"),
+    url("../fonts/OpenSans-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -10,21 +10,21 @@
 @font-face {
   font-family: "Open Sans";
   font-display: swap;
-  src: url("../fonts/opensansbold.woff2") format("woff2"),
-    url("../fonts/opensansbold.woff") format("woff");
+  src: url("../fonts/OpenSans-Bold.woff2") format("woff2"),
+    url("../fonts/OpenSans-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
 
 body {
+  min-width: 320px;
   font-family: @font-family;
   font-size: 17px;
   line-height: 24px;
   font-weight: 400;
-  color: black;
+  color: @black;
   margin: 0;
   padding: 0;
-  min-width: 320px;
   background-color: white;
 }
 
@@ -58,4 +58,8 @@ html {
 img {
   max-width: 100%;
   height: auto;
+}
+
+li {
+  list-style: none;
 }
