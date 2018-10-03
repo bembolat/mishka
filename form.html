@@ -3,22 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <title>Мишка - магазин вязаных вещей</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preload" href="fonts/OpenSans-Regular.woff2" as="font">
+  <link rel="preload" href="fonts/OpenSans-Bold.woff2" as="font">
 </head>
 <body>
 <header class="main-header">
-  <a href="index.html" class="main-header__logo-link">
-    <img class="main-header__logo-image" src="http://placehold.it/150x100" alt="logo-brand">
-  </a>
   <nav class="main-nav">
     <button class="main-nav__toggle"></button>
+    <button class="main-nav__close"></button>
     <div class="main-nav__wrapper">
       <ul class="main-nav__list site-list">
-        <li class="site-list__item"><a href="catalog.html">Каталог товаров</a></li>
-        <li class="site-list__item"><a href="#">Вязание на заказ</a></li>
-        <li class="site-list__item"><a href="#">Поиск по сайту</a></li>
-        <li class="site-list__item"><a href="#">Корзина пока пуста</a></li>
+        <li class="site-list__item site-list__item--logo">
+        <a href="index.html" class="site-list__logo-link">
+        <img class="site-list__logo-image" src="img/mishka-logo-mobile.png" width = "85" height = "35" alt="logo-brand">
+        </a></li>
+        <li class="site-list__item site-list__item--catalog"><a class="site-list__link" href="catalog.html">Каталог товаров</a></li>
+        <li class="site-list__item site-list__item--order"><a class="site-list__link" href="form.html ">Вязание на заказ</a></li>
+        <li class="site-list__item site-list__item--search"><a class="site-list__link" href="#">Поиск по сайту</a></li>
+        <li class="site-list__item site-list__item--basket"><a class="site-list__link" href="#">Корзина: пока пуста</a></li>
+        <li class="site-list__item site-list__item--new"><a class="site-list__link" href="#">Новые поступления</a></li>
+        <li class="site-list__item site-list__item--sale"><a class="site-list__link" href="#">Распродажа</a></li>
       </ul>
+      <span class="main-header__delivery">Бесплатная доставка по России</span>
     </div>
   </nav>
 </header>
@@ -26,42 +34,45 @@
   <div class="page-heading">
     <h1 class="page-heading__title">Вязание на заказ</h1>
   </div>
-  <p class="creation__text">Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа и мы свяжемся с вами, чтобы уточнить детали.</p>
+  <div class="info-form">
+  <p class="info-form__text">Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа и мы свяжемся с вами, чтобы уточнить детали.</p>
+  </div>
   <div class="filter">
     <form action="https://echo.htmlacademy.ru" class="filter__form form-filter" method="get">
-      <fieldset class="filter__type">
-        <legend class="filter-titles">тип</legend>
-        <input type="radio" id="rd1"><label for="rd1">Аксессуар для интерьера</label></input>
-        <input type="radio" id="rd2"><label for="rd2">Детская игрушка</label></input>
+      <fieldset class="filter__fieldset filter__fieldset--type">
+        <legend class="filter__titles">тип</legend>
+        <input class="visually-hidden" type="radio" id="rd1" name="type" value="accessory" checked><label class="filter__label filter__label--type " for="rd1">Аксессуар для интерьера</label>
+        <input class="visually-hidden" type="radio" id="rd2" name="type" value="toy"><label class="filter__label filter__label--type" for="rd2">Детская игрушка</label>
       </fieldset>
-      <fieldset class="filter__color">
+      <fieldset class="filter__fieldset filter__fieldset--color">
         <legend class="filter__titles">цвет</legend>
-        <input type="checkbox" id="ch1" checked><label for="ch1">Белый</label>
-        <input type="checkbox" id="ch2" checked><label for="ch2">Серый</label>
-        <input type="checkbox" id="ch3"><label for="ch3">«Тиффани»</label>
-        <input type="checkbox" id="ch4"><label for="ch4">Черный</label>
-        <input type="checkbox" id="ch5"><label for="ch5">Розовый</label>
-        <input type="checkbox" id="ch6"><label for="ch6">Оранжевый</label>
+        <input class="visually-hidden" type="checkbox" id="ch1" checked><label class="filter__label filter__label--color" for="ch1">Белый</label>
+        <input class="visually-hidden" type="checkbox" id="ch2" checked><label class="filter__label filter__label--color" for="ch2">Серый</label>
+        <input class="visually-hidden" type="checkbox" id="ch3"><label class="filter__label filter__label--color" for="ch3">«Тиффани»</label>
+        <input class="visually-hidden" type="checkbox" id="ch4"><label class="filter__label filter__label--color" for="ch4">Черный</label>
+        <input class="visually-hidden" type="checkbox" id="ch5"><label class="filter__label filter__label--color" for="ch5">Розовый</label>
+        <input class="visually-hidden" type="checkbox" id="ch6"><label class="filter__label filter__label--color" for="ch6">Оранжевый</label>
       </fieldset>
-      <fieldset class="filter__customer">
+      <fieldset class="filter__fieldset filter__fieldset--customer">
         <legend class="filter__titles">фио</legend>
-        <input type="text" id="fio1" placeholder="Введите ваше имя*" name="name"><label for="fio1">Имя</label></input>
-        <input type="text" id="fio2" placeholder="Укажите фамилию*" name="surname"><label for="fio2">Фамилия</label></input>
-        <input type="text" id="fio3" placeholder="Отчество, если желаете" name="patronymic"><label for="fio3">Отчество</label></input>
+        <label class="filter__label filter__label--customer" for="fio1">Имя:</label>
+        <input type="text" id="fio1" placeholder="Введите ваше имя*" name="name">
+        <label class="filter__label filter__label--customer" for="fio2">Фамилия:</label><input type="text" id="fio2" placeholder="Укажите фамилию*" name="surname">
+        <label class="filter__label filter__label--customer" for="fio3">Отчество:</label><input type="text" id="fio3" placeholder="Отчество, если желаете" name="patronymic">
       </fieldset>
-      <fieldset class="filter__phone">
+      <fieldset class="filter__fieldset filter__fieldset--phone">
         <legend class="filter__titles">тел</legend>
         <input type="text" id="phone" placeholder="+7 ХХХ ХХ ХХ*" name="phone-number">
         <label for="phone"></label>
       </fieldset>
-      <fieldset class="filter__mail">
+      <fieldset class="filter__fieldset filter__fieldset--mail">
         <legend class="filter__titles">e-mail</legend>
         <input type="text" id="mail" placeholder="Ваш Email*" name="mail">
-        <label for="phone"></label>
+        <label for="mail"></label>
       </fieldset>
-      <fieldset class="filter__details">
+      <fieldset class="filter__fieldset filter__fieldset--details">
         <legend class="filter__titles">доп</legend>
-        <textarea rows="4" placeholder="Опишите все ваши пожелания к заказу" name="details"></textarea>
+        <textarea rows="7" placeholder="Опишите все ваши пожелания к заказу" name="details"></textarea>
       </fieldset>
       <p class="filter__text">*Поля обязательные для заполнения</p>
       <button class="button" href="#">отправить заказ</a>
@@ -70,10 +81,10 @@
 </main>
   <footer class="main-footer">
     <div class="social">
-      <ul class="social-list">
-        <li class="social__item"><a href="#" class="social-link">Мы в инстаграм</a></li>
-        <li class="social__item"><a href="#" class="social-link">Мы в фейсбук</a></li>
-        <li class="social__item"><a href="#" class="social-link">Мы в твиттере</a></li>
+      <ul class="social__list">
+        <li class="social__item"><a href="#" class="social-inst visually-hidden">Мы в инстаграм</a></li>
+        <li class="social__item"><a href="#" class="social-face visually-hidden">Мы в фейсбук</a></li>
+        <li class="social__item"><a href="#" class="social-twit visually-hidden">Мы в твиттере</a></li>
       </ul>
     </div>
   </footer>

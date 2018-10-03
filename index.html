@@ -3,29 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <title>Мишка - магазин вязаных вещей</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preload" href="fonts/OpenSans-Regular.woff2" as="font">
+  <link rel="preload" href="fonts/OpenSans-Bold.woff2" as="font">
 </head>
 <body>
 <header class="main-header">
-  <a href="#" class="main-header__logo-link">
-    <img class="main-header__logo-image" src="http://placehold.it/150x100" alt="logo-brand">
-  </a>
   <nav class="main-nav">
     <button class="main-nav__toggle"></button>
+    <button class="main-nav__close"></button>
     <div class="main-nav__wrapper">
       <ul class="main-nav__list site-list">
-        <li class="site-list__item"><a href="catalog.html">Каталог товаров</a></li>
-        <li class="site-list__item"><a href="form.html ">Вязание на заказ</a></li>
-        <li class="site-list__item"><a href="#">Поиск по сайту</a></li>
-        <li class="site-list__item"><a href="#">Корзина пока пуста</a></li>
+        <li class="site-list__item site-list__item--logo">
+        <a href="#" class="site-list__logo-link">
+        <img class="site-list__logo-image" src="img/mishka-logo-mobile.png" width = "85" height = "35" alt="logo-brand">
+        </a></li>
+        <li class="site-list__item site-list__item--catalog"><a class="site-list__link" href="catalog.html">Каталог товаров</a></li>
+        <li class="site-list__item site-list__item--order"><a class="site-list__link" href="form.html ">Вязание на заказ</a></li>
+        <li class="site-list__item site-list__item--search"><a class="site-list__link" href="#">Поиск по сайту</a></li>
+        <li class="site-list__item site-list__item--basket"><a class="site-list__link" href="#">Корзина: пока пуста</a></li>
+        <li class="site-list__item site-list__item--new"><a class="site-list__link" href="#">Новые поступления</a></li>
+        <li class="site-list__item site-list__item--sale"><a class="site-list__link" href="#">Распродажа</a></li>
       </ul>
+      <span class="main-header__delivery">Бесплатная доставка по России</span>
     </div>
   </nav>
 </header>
 <main>
   <section class="categories">
     <div class="categories__wrap-title">
-      <h1 class="categoriels__title">Милые штуки ручной работы</h1>
+      <h1 class="categories__title">Милые штуки ручной<br>работы для дома</h1>
     </div>
     <ul class="categories__list group-list">
       <li class="group-list__item"><a href="" class="group-list__link">Предметы интерьера</a></li>
@@ -36,18 +44,18 @@
     <h1 class="top__title">Вязаные корзинки</h1>
     <h2 class="top__headline">товар недели</h2>
     <p class="top__text">Экологически чистая пряжа, ручная работа. Доступны в шести расцветках, и трех размерах.</p>
-    <table class="top__info">
-      <tr>
-        <td>Цвет:</td>
-        <td>«Тифани»/серый</td>
+    <table class="top__info table">
+      <tr class="table__line">
+        <td class="table__property">Цвет:</td>
+        <td class="table__value">«Тифани»/серый</td>
       </tr>
-      <tr>
-        <td>Диаметр:</td>
-        <td>25см</td>
+      <tr class="table__line">
+        <td class="table__property">Диаметр:</td>
+        <td class="table__value">25см</td>
       </tr>
-      <tr>
-        <td>Высота:</td>
-        <td>15см</td>
+      <tr class="table__line">
+        <td class="table__property">Высота:</td>
+        <td class="table__value">15см</td>
       </tr>
     </table>
     <div class="top__wrap-image"><img class="top__image" src="http://placehold.it/150x100" alt="logo-brand"></div>
@@ -57,12 +65,12 @@
   <section class="about">
     <h2 class="about__title">Коротко о нас:</h2>
     <ul class="about__list">
-      <li class="about__item1">Экологически чистые материалы</li>
-      <li class="about__item2">Скандинавский стиль по российской цене</li>
-      <li class="about__item3">Увеличивает лайки на фотографиях</li>
-      <li class="about__item4">Связано вручную с любовью и умилением</li>
-      <li class="about__item5">Поддержка отечественного производителя</li>
-      <li class="about__item6">Поставляется в подарочной упаковке</li>
+      <li class="about__item about__item--eco">Экологически чистые материалы</li>
+      <li class="about__item about__item--style">Скандинавский стиль по российской цене</li>
+      <li class="about__item about__item--like">Увеличивает лайки на фотографиях</li>
+      <li class="about__item about__item--love">Связано вручную с любовью и умилением</li>
+      <li class="about__item about__item--domestic">Поддержка отечественного производителя</li>
+      <li class="about__item about__item--gift">Поставляется в подарочной упаковке</li>
     </ul>
   </section>
   <section class="comments">
@@ -71,18 +79,20 @@
     <p class="comments__user">Анастасия Красильникова</p>
     <span class="comments__span">@missssssskras</span>
     <div class="comments__wrap-toggles"><button class="comments__button-left"></button><button class="comments__button-right"></button></div>
-    <a href="#" class="button"></a>
+    <a href="#" class="button">написать</a>
   </section>
   <section class="contacts">
     <h2 class="contacts__title">Контакты</h2>
     <table class="contacts__info">
-      <tr class="contacts__mail">
-        <td></td>
-        <td></td>
+      <tr>
+        <td class="contacts__property">e-mail:</td>
+        <td class="contacts__mail">info@mimimishkashop.ru</td>
       </tr>
-      <tr class="contacts__addres">
-        <td></td>
-        <td></td>
+      <tr">
+        <td class="contacts__property">адрес:</td>
+        <td class="contacts__value">г. Санкт-Петербург,
+        ул. Большая Конюшенная, 
+        д. 19/8, офис 101</td>
       </tr>
     </table>
     <div class="contacts__map"></div>
@@ -91,33 +101,31 @@
 </main>
   <footer class="main-footer">
     <div class="social">
-      <ul class="social-list">
-        <li class="social__item"><a href="#" class="social-inst">Мы в инстаграм</a></li>
-        <li class="social__item"><a href="#" class="social-face">Мы в фейсбук</a></li>
-        <li class="social__item"><a href="#" class="social-twit">Мы в твиттере</a></li>
+      <ul class="social__list">
+        <li class="social__item"><a href="#" class="social-inst visually-hidden">Мы в инстаграм</a></li>
+        <li class="social__item"><a href="#" class="social-face visually-hidden">Мы в фейсбук</a></li>
+        <li class="social__item"><a href="#" class="social-twit visually-hidden">Мы в твиттере</a></li>
       </ul>
     </div>
   </footer>
   <div class="modal">
+    <h2 class="modal__title">Добавить<br>в корзину</h2>
       <form class="modal__form basket-form" method="post" action="https://echo.htmlacademy.ru/">
-        <b class="basket-form__title">Добавить<br> в корзину</b>
-        <div class="basket-form__field-group">
-          <p class="basket-form__field-group-title">Выбирите размер:</p>
-          <div class="basket-form__field-group-fields">
+          <p class="basket-form__title">Выберите размер:</p>
+          <div class="basket-form__field-group">
             <div class="basket-form__field">
-              <input type="radio" name="size" value="S" id="size1" checked="">
-              <label for="size1">S</label>
+              <input class="basket-form__input visually-hidden" type="radio" name="size" value="S" id="size1" checked>
+              <label class="basket-form__label" for="size1">S</label>
             </div>
             <div class="basket-form__field">
-              <input type="radio" name="size" value="M" id="size2">
-              <label for="size2">M</label>
+              <input class="basket-form__input visually-hidden" type="radio" name="size" value="M" id="size2">
+              <label class="basket-form__label" for="size2">M</label>
             </div>
             <div class="basket-form__field">
-              <input type="radio" name="size" value="L" id="size3">
-              <label for="size3">L</label>
+              <input class="basket-form__input visually-hidden" type="radio" name="size" value="L" id="size3">
+              <label class="basket-form__label" for="size3">L</label>
             </div>
           </div>
-        </div>
         <button class="button basket-form__button" name="add-basket">Добавить</button>
       </form>
     </div>

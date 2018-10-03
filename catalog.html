@@ -3,22 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <title>Мишка - магазин вязаных вещей</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preload" href="fonts/OpenSans-Regular.woff2" as="font">
+  <link rel="preload" href="fonts/OpenSans-Bold.woff2" as="font">
 </head>
 <body>
 <header class="main-header">
-  <a href="index.html" class="main-header__logo-link">
-    <img class="main-header__logo-image" src="http://placehold.it/150x100" alt="logo-brand">
-  </a>
   <nav class="main-nav">
     <button class="main-nav__toggle"></button>
+    <button class="main-nav__close"></button>
     <div class="main-nav__wrapper">
       <ul class="main-nav__list site-list">
-        <li class="site-list__item"><a href="#">Каталог товаров</a></li>
-        <li class="site-list__item"><a href="form.html">Вязание на заказ</a></li>
-        <li class="site-list__item"><a href="#">Поиск по сайту</a></li>
-        <li class="site-list__item"><a href="#">Корзина пока пуста</a></li>
+        <li class="site-list__item site-list__item--logo">
+        <a href="index.html" class="site-list__logo-link">
+        <img class="site-list__logo-image" src="img/mishka-logo-mobile.png" width = "85" height = "35" alt="logo-brand">
+        </a></li>
+        <li class="site-list__item site-list__item--catalog"><a class="site-list__link" href="catalog.html">Каталог товаров</a></li>
+        <li class="site-list__item site-list__item--order"><a class="site-list__link" href="form.html ">Вязание на заказ</a></li>
+        <li class="site-list__item site-list__item--search"><a class="site-list__link" href="#">Поиск по сайту</a></li>
+        <li class="site-list__item site-list__item--basket"><a class="site-list__link" href="#">Корзина: пока пуста</a></li>
+        <li class="site-list__item site-list__item--new"><a class="site-list__link" href="#">Новые поступления</a></li>
+        <li class="site-list__item site-list__item--sale"><a class="site-list__link" href="#">Распродажа</a></li>
       </ul>
+      <span class="main-header__delivery">Бесплатная доставка по России</span>
     </div>
   </nav>
 </header>
@@ -28,14 +36,14 @@
   </div>
   <section class="catalog">
     <h2 class="visually-hidden">Список товаров</h2>
-    <ul class="catalog-list">
+    <ul class="catalog__list">
       <li class="catalog__item product">
-        <a href="" class="product__link">
+        <a href="#" class="product__link">
           <picture></picture></a>
         <div class="product__info">
           <h3 class="product__title"><a href="" class="product__title-link">Зайчик-попрыгайчик</a></h3>
           <p class="product__text">Рост 30см, вес 200 г</p>
-          <div class="product__price"><span class="product__span">1 200 руб.</span><a href="" class="product__basket"></a></div>
+          <div class="product__price"><span class="product__span">1 200 руб.</span><a href="#" class="product__basket"><span class="visually-hidden">В корзину</span></a></div>
         </div>
       </li>
       <li class="catalog__item product">
@@ -44,7 +52,7 @@
         <div class="product__info">
           <h3 class="product__title"><a href="" class="product__title-link">Корзина для белья</a></h3>
           <p class="product__text">Диаметр 15 см, высота 10 см</p>
-          <div class="product__price"><span class="product__span">690 руб.</span><a href="" class="product__basket"></a></div>
+          <div class="product__price"><span class="product__span">690 руб.</span><a href="" class="product__basket"><span class="visually-hidden">В корзину</span></a></div>
         </div>
       </li>
       <li class="catalog__item product">
@@ -53,7 +61,7 @@
         <div class="product__info">
           <h3 class="product__title"><a href="" class="product__title-link">Большая корзинка для игрушек</a></h3>
           <p class="product__text">Диаметр 30см, высота 30см</p>
-          <div class="product__price"><span class="product__span">1 500 руб.</span><a href="" class="product__basket"></a></div>
+          <div class="product__price"><span class="product__span">1 500 руб.</span><a href="" class="product__basket"><span class="visually-hidden">В корзину</span></a></div>
         </div>
       </li>
     </ul>
@@ -69,34 +77,32 @@
 </main>
 <footer class="main-footer">
     <div class="social">
-      <ul class="social-list">
-        <li class="social__item"><a href="#" class="social-link">Мы в инстаграм</a></li>
-        <li class="social__item"><a href="#" class="social-link">Мы в фейсбук</a></li>
-        <li class="social__item"><a href="#" class="social-link">Мы в твиттере</a></li>
+      <ul class="social__list">
+        <li class="social__item"><a href="#" class="social-inst visually-hidden">Мы в инстаграм</a></li>
+        <li class="social__item"><a href="#" class="social-face visually-hidden">Мы в фейсбук</a></li>
+        <li class="social__item"><a href="#" class="social-twit visually-hidden">Мы в твиттере</a></li>
       </ul>
     </div>
   </footer>
   <div class="modal">
+    <h2 class="modal__title">Добавить<br>в корзину</h2>
       <form class="modal__form basket-form" method="post" action="https://echo.htmlacademy.ru/">
-        <b class="basket-form__title">Добавить<br> в корзину</b>
-        <div class="basket-form__field-group">
-          <p class="basket-form__field-group-title">Выбирите размер:</p>
-          <div class="basket-form__field-group-fields">
+          <p class="basket-form__title">Выберите размер:</p>
+          <div class="basket-form__field-group">
             <div class="basket-form__field">
-              <input type="radio" name="size" value="S" id="size1" checked="">
-              <label for="size1">S</label>
+              <input class="basket-form__input visually-hidden" type="radio" name="size" value="S" id="size1" checked>
+              <label class="basket-form__label" for="size1">S</label>
             </div>
             <div class="basket-form__field">
-              <input type="radio" name="size" value="M" id="size2">
-              <label for="size2">M</label>
+              <input class="basket-form__input visually-hidden" type="radio" name="size" value="M" id="size2">
+              <label class="basket-form__label" for="size2">M</label>
             </div>
             <div class="basket-form__field">
-              <input type="radio" name="size" value="L" id="size3">
-              <label for="size3">L</label>
+              <input class="basket-form__input visually-hidden" type="radio" name="size" value="L" id="size3">
+              <label class="basket-form__label" for="size3">L</label>
             </div>
           </div>
-        </div>
-        <button class="button basket-form__button" type="submit" name="add-basket">Добавить</button>
+        <button class="button basket-form__button" name="add-basket">Добавить</button>
       </form>
     </div>
 </body>
