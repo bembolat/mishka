@@ -7,26 +7,34 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="preload" href="fonts/OpenSans-Regular.woff2" as="font">
   <link rel="preload" href="fonts/OpenSans-Bold.woff2" as="font">
+  <link rel="shortcut icon" href="img/favicon.png" type="image/png">
 </head>
 <body>
 <header class="main-header">
-  <nav class="main-nav">
+  <nav class="main-nav main-nav--closed main-nav--nojs">
     <button class="main-nav__toggle"></button>
-    <button class="main-nav__close"></button>
     <div class="main-nav__wrapper">
       <ul class="main-nav__list site-list">
         <li class="site-list__item site-list__item--logo">
-        <a href="#" class="site-list__logo-link">
-        <img class="site-list__logo-image" src="img/mishka-logo-mobile.png" width = "85" height = "35" alt="logo-brand">
+        <a class="site-list__logo-link">
+          <picture>
+            <source media="(min-width: 1150px)" srcset="img/logo-desktop.svg">
+            <source media="(min-width: 768px)" srcset="img/logo-tablet.svg">
+            <img class="site-list__logo-image" src="img/logo-mobile.svg" width = "85" height = "35" alt="logo-brand">
+          </picture>
         </a></li>
         <li class="site-list__item site-list__item--catalog"><a class="site-list__link" href="catalog.html">Каталог товаров</a></li>
         <li class="site-list__item site-list__item--order"><a class="site-list__link" href="form.html ">Вязание на заказ</a></li>
-        <li class="site-list__item site-list__item--search"><a class="site-list__link" href="#">Поиск по сайту</a></li>
-        <li class="site-list__item site-list__item--basket"><a class="site-list__link" href="#">Корзина: пока пуста</a></li>
+        <li class="site-list__item site-list__item--search"><form action="https://echo.htmlacademy.ru" class="site-list__search" method="get">
+          <label for="search" class="visually-hidden"> Поиск по сайту</label>
+          <input class="site-list__input" type="text" id="search" placeholder="Поиск по сайту">
+          <button class="site-list__button"><span class="visually-hidden">Найти</span></button>
+        </form></li>
+        <li class="site-list__item site-list__item--basket"><a class="site-list__link site-list__link--basket" href="#">Корзина: пока пуста</a></li>
         <li class="site-list__item site-list__item--new"><a class="site-list__link" href="#">Новые поступления</a></li>
         <li class="site-list__item site-list__item--sale"><a class="site-list__link" href="#">Распродажа</a></li>
+        <li class="site-list__item site-list__item--delivery"><span class="site-list__delivery">Бесплатная доставка по России</span></li>
       </ul>
-      <span class="main-header__delivery">Бесплатная доставка по России</span>
     </div>
   </nav>
 </header>
@@ -36,8 +44,8 @@
       <h1 class="categories__title">Милые штуки ручной<br>работы для дома</h1>
     </div>
     <ul class="categories__list group-list">
-      <li class="group-list__item"><a href="" class="group-list__link">Предметы интерьера</a></li>
-      <li class="group-list__item"><a href="" class="group-list__link">Детские игрушки</a></li>
+      <li class="group-list__item"><a href="#" class="group-list__link"><span>Предметы<br>интерьера</span><img class="group-list__interior" src="img/interior.png" width="42" height="64"></a></li>
+      <li class="group-list__item"><a href="#" class="group-list__link"><span>Детские<br>игрушки</span><img class="group-list__toy" src="img/toy.png" width="64" height="64"></a></li>
     </ul>
   </section>
   <section class="top">
@@ -58,9 +66,15 @@
         <td class="table__value">15см</td>
       </tr>
     </table>
-    <div class="top__wrap-image"><img class="top__image" src="http://placehold.it/150x100" alt="logo-brand"></div>
-    <p class="top__price">Цена: 990 руб.</p>
-    <a href="#" class="button">Заказать</a>
+    <div class="top__wrap-image">
+      <picture>
+        <source media="(min-width: 1150px)" srcset="img/triple-set-desktop@1x.jpg 1x, img/triple-set-desktop@2x.jpg 2x">
+          <source media="(min-width: 768px)" srcset="img/triple-set-tablet@1x.jpg 1x, img/triple-set-tablet@2x.jpg 2x">
+        <img class="top__image" src="img/triple-set-mobile@1x.jpg" srcset="img/triple-set-mobile@2x.jpg 2x" alt="logo-brand">
+      </picture>
+    </div>
+    <div class="top__wrap-price"><p class="top__price">Цена: 990 руб.</p>
+    <a href="" class="button top__button">Заказать</a></div>
   </section>
   <section class="about">
     <h2 class="about__title">Коротко о нас:</h2>
@@ -76,27 +90,43 @@
   <section class="comments">
     <h2 class="comments__title">Отзывы</h2>
     <p class="comments__text">Я молодая мама, но всё равно фотографии не набирали и близко такого количества лайков, как у популярных инстамамочек. В отчаянии, я накупила аксессуаров и игрушек в Мишке, и мои фотографии сразу стали более стильными, а также набирают больше лайков!</p>
+    <div class="comments__wrap-title">
     <p class="comments__user">Анастасия Красильникова</p>
-    <span class="comments__span">@missssssskras</span>
+    <span class="comments__span">@missssssskras</span></div>
     <div class="comments__wrap-toggles"><button class="comments__button-left"></button><button class="comments__button-right"></button></div>
-    <a href="#" class="button">написать</a>
+    <a href="#" class="button comments__button">написать</a>
   </section>
-  <section class="contacts">
+  <section class="contacts-wrapper">
+  <div class="contacts">
     <h2 class="contacts__title">Контакты</h2>
-    <table class="contacts__info">
-      <tr>
-        <td class="contacts__property">e-mail:</td>
-        <td class="contacts__mail">info@mimimishkashop.ru</td>
-      </tr>
-      <tr">
-        <td class="contacts__property">адрес:</td>
-        <td class="contacts__value">г. Санкт-Петербург,
+    <div class="contacts__info">   
+      <div class="contacts__mail"> 
+        <p class="contacts__property">e-mail:</p>
+        <a class="contacts__value" href="mailto:info@mimimishkashop.ru">info@mimimishkashop.ru</a>
+      </div> 
+      <div class="contacts__adress">
+        <p class="contacts__property">адрес:</p>
+        <p class="contacts__street">г. Санкт-Петербург,
         ул. Большая Конюшенная, 
-        д. 19/8, офис 101</td>
-      </tr>
-    </table>
-    <div class="contacts__map"></div>
-    <a href="" class="button">Напишите нам</a>
+        д. 19/8, офис 101</p>
+      </div>
+    </div>
+  </div>
+  <div class="contacts__map">
+          <div id="map" class="contacts__map-embed contacts__map-embed--nojs"></div>
+          <a href="#" class="contacts__map-link contacts__map-link--nojs">
+            <picture>
+              <source type="image/webp" media="(min-width: 1150px)" srcset="img/map-desktop@1x.webp 1x, img/map-desktop@2x.webp 2x">
+              <source type="image/webp" media="(min-width: 768px)" srcset="img/map-tablet@1x.webp 1x, img/map-tablet@2x.webp 2x">
+              <source type="image/webp" srcset="img/map-mobile@1x.webp 1x, img/map-mobile@2x.webp 2x">
+              <source media="(min-width: 1150px)" srcset="img/map-desktop@1x.jpg 1x, img/map-desktop@2x.jpg 2x">
+              <source media="(min-width: 768px)" srcset="img/map-tablet@1x.jpg 1x, img/map-tablet@2x.jpg 2x">
+              <img class="contacts__map-image" src="img/map-mobile@1x.jpg" srcset="img/map-mobile@2x.jpg 2x" alt="Магазин «Мишка» по адресу ул. Большая Конюшенная, 19/8, Санкт-Петербург">
+            </picture>
+            <span class="contacts__map-pin"><img class="contacts__map-pin-image" src="img/map-pin.png" width="67" height="100" alt="Указатель на карте"></span>
+          </a>
+        </div>
+        <a href="write-us.html" class="contacts__button button">Напишите нам</a>
   </section>
 </main>
   <footer class="main-footer">
@@ -108,8 +138,9 @@
       </ul>
     </div>
   </footer>
+  <div class="modal-wrapper">
   <div class="modal">
-    <h2 class="modal__title">Добавить<br>в корзину</h2>
+    <h2 class="modal__title">Добавить в корзину</h2>
       <form class="modal__form basket-form" method="post" action="https://echo.htmlacademy.ru/">
           <p class="basket-form__title">Выберите размер:</p>
           <div class="basket-form__field-group">
@@ -129,5 +160,7 @@
         <button class="button basket-form__button" name="add-basket">Добавить</button>
       </form>
     </div>
+    </div>
+    <script src="js/main.js"></script>
 </body>
 </html>

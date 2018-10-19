@@ -7,26 +7,34 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="preload" href="fonts/OpenSans-Regular.woff2" as="font">
   <link rel="preload" href="fonts/OpenSans-Bold.woff2" as="font">
+  <link rel="shortcut icon" href="img/favicon.png" type="image/png">
 </head>
 <body>
 <header class="main-header">
-  <nav class="main-nav">
+  <nav class="main-nav main-nav--closed main-nav--nojs">
     <button class="main-nav__toggle"></button>
-    <button class="main-nav__close"></button>
     <div class="main-nav__wrapper">
       <ul class="main-nav__list site-list">
         <li class="site-list__item site-list__item--logo">
         <a href="index.html" class="site-list__logo-link">
-        <img class="site-list__logo-image" src="img/mishka-logo-mobile.png" width = "85" height = "35" alt="logo-brand">
+          <picture>
+            <source media="(min-width: 1150px)" srcset="img/logo-desktop.svg">
+            <source media="(min-width: 768px)" srcset="img/logo-tablet.svg">
+            <img class="site-list__logo-image" src="img/logo-mobile.svg" width = "85" height = "35" alt="logo-brand">
+          </picture>        
         </a></li>
         <li class="site-list__item site-list__item--catalog"><a class="site-list__link" href="catalog.html">Каталог товаров</a></li>
         <li class="site-list__item site-list__item--order"><a class="site-list__link" href="form.html ">Вязание на заказ</a></li>
-        <li class="site-list__item site-list__item--search"><a class="site-list__link" href="#">Поиск по сайту</a></li>
-        <li class="site-list__item site-list__item--basket"><a class="site-list__link" href="#">Корзина: пока пуста</a></li>
+        <li class="site-list__item site-list__item--search"><form action="https://echo.htmlacademy.ru" class="site-list__search" method="get">
+          <label for="search" class="visually-hidden"> Поиск по сайту</label>
+          <input class="site-list__input" type="text" id="search" placeholder="Поиск по сайту">
+          <button class="site-list__button"><span class="visually-hidden">Найти</span></button>
+        </form></li>
+        <li class="site-list__item site-list__item--basket"><a class="site-list__link site-list__link--basket" href="#">Корзина: пока пуста</a></li>
         <li class="site-list__item site-list__item--new"><a class="site-list__link" href="#">Новые поступления</a></li>
         <li class="site-list__item site-list__item--sale"><a class="site-list__link" href="#">Распродажа</a></li>
+        <li class="site-list__item site-list__item--delivery"><span class="site-list__delivery">Бесплатная доставка по России</span></li>
       </ul>
-      <span class="main-header__delivery">Бесплатная доставка по России</span>
     </div>
   </nav>
 </header>
@@ -39,7 +47,12 @@
     <ul class="catalog__list">
       <li class="catalog__item product">
         <a href="#" class="product__link">
-          <picture></picture></a>
+          <picture>
+            <source media="(min-width: 1150px)" srcset="img/photo-hare-desktop@1x.jpg 1x, img/photo-hare-desktop@2x.jpg 2x">
+            <source media="(min-width: 750px)" srcset="img/photo-hare-tablet@1x.jpg 1x, img/photo-hare-tablet@2x.jpg 2x">
+            <img class="product__image" src="img/photo-hare-mobile@1x.jpg" srcset="img/photo-hare-mobile@2x.jpg" alt="заяц">
+          </picture>
+        </a>
         <div class="product__info">
           <h3 class="product__title"><a href="" class="product__title-link">Зайчик-попрыгайчик</a></h3>
           <p class="product__text">Рост 30см, вес 200 г</p>
@@ -48,7 +61,12 @@
       </li>
       <li class="catalog__item product">
         <a href="" class="product__link">
-          <picture></picture></a>
+          <picture>
+            <source media="(min-width: 1150px)" srcset="img/photo-bowl-desktop@1x.jpg 1x, img/photo-bowl-desktop@2x.jpg 2x">
+            <source media="(min-width: 750px)" srcset="img/photo-bowl-tablet@1x.jpg 1x, img/photo-bowl-tablet@2x.jpg 2x">
+            <img class="product__image" src="img/photo-bowl-mobile@1x.jpg" srcset="img/photo-bowl-mobile@2x.jpg" alt="заяц">
+          </picture>
+        </a>
         <div class="product__info">
           <h3 class="product__title"><a href="" class="product__title-link">Корзина для белья</a></h3>
           <p class="product__text">Диаметр 15 см, высота 10 см</p>
@@ -57,7 +75,12 @@
       </li>
       <li class="catalog__item product">
         <a href="" class="product__link">
-          <picture></picture></a>
+          <picture>
+            <source media="(min-width: 1150px)" srcset="img/photo-toys-desktop@1x.jpg 1x, img/photo-toys-desktop@2x.jpg 2x">
+            <source media="(min-width: 750px)" srcset="img/photo-toys-tablet@1x.jpg 1x, img/photo-toys-tablet@2x.jpg 2x">
+            <img class="product__image" src="img/photo-toys-mobile@1x.jpg" srcset="img/photo-toys-mobile@2x.jpg" alt="заяц">
+          </picture>
+        </a>
         <div class="product__info">
           <h3 class="product__title"><a href="" class="product__title-link">Большая корзинка для игрушек</a></h3>
           <p class="product__text">Диаметр 30см, высота 30см</p>
@@ -70,9 +93,16 @@
     <div class="creation__wrap-title">
       <h2 class="creation__title">Процесс производства</h2>
     </div>
-    <img class="creation__image" src="http://placehold.it/150x100" alt="creation-picture">
-    <p class="creation__text">По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши товары.</p>
-    <a href="" class="button">Сделать заказ</a>
+    <div class="creation__wrap-image">
+    <picture>
+      <source media="(min-width: 1150px)" srcset="img/video-desktop@1x.jpg 1x, img/video-desktop@2x.jpg 2x">
+      <source media="(min-width: 750px)" srcset="img/video-tablet@1x.jpg 1x, img/video-tablet@2x.jpg 2x">
+      <img class="creation__image" src="img/video-mobile@1x.jpg" srcset="img/video-tablet@2x.jpg" alt="creation-picture">
+    </picture>
+    </div>
+    <p class="creation__text">По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши товары.
+        <a href="#" class="button">Сделать заказ</a>
+    </p>
   </section>
 </main>
 <footer class="main-footer">
@@ -105,5 +135,6 @@
         <button class="button basket-form__button" name="add-basket">Добавить</button>
       </form>
     </div>
+  <script src="js/main.js"></script>
 </body>
 </html>
