@@ -4,6 +4,8 @@
   &__fieldset {
   display: flex;
   padding: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
   padding-bottom: 45px;
   border: 0;
   }
@@ -26,6 +28,17 @@
   border-top: 1px solid @aquamarine;
   }
   }
+  &__values {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin:0;
+  padding: 0;
+  }
+  &__item {
+  padding: 14px 0;
+  width: 50%;
+  }
 }
 
 .filter__label {
@@ -38,7 +51,7 @@
   }
 }
 
-input[type="text"] {
+.filter__fieldset input[type="text"] {
   width: 100%;
   padding: 15px 0;
   border: 0;
@@ -52,4 +65,116 @@ input[type="text"] {
   width: 100%;
   border: 2px solid @grey;
   outline: 0;
+}
+
+@media (min-width: @tablet) {
+  .filter {
+  padding: 0;
+  margin-top: 60px;
+  &__titles {
+  width: 167px;
+  &::after {
+  display: none;
+  }
+  }
+  &__container {
+  display: flex;
+  width: 680px;
+  margin: 0 auto;
+  }
+  &__label {
+  margin-top: 0;
+  margin-bottom: 60px;
+  font-size: 19px;
+  &--type, &--color {
+  padding-left: 80px;
+  }
+  }
+  }
+
+  .filter {
+  &__fieldset {
+  padding: 50px 0;
+  }
+  &__fieldset--color .filter__values {
+  flex-direction: row;
+  flex-wrap: wrap;
+  }
+  &__fieldset--color {
+  background-color: @grey-fon;
+  padding-bottom: 25px;
+  & .filter__titles {
+  margin-top: 14px;
+  }
+  }
+  &__fieldset--customer {
+  & .filter__values {
+  flex-direction: row;
+  flex-wrap: wrap;
+  }
+  & input[type=text] {
+  width: 77%;
+  flex-grow: 1;
+  margin-bottom: 40px;
+  padding-top: 0;
+  }
+  & label {
+  margin-right: 25px;
+  margin-bottom: 0;
+  }
+  }
+  & input[type=text] {
+  padding-top: 0;
+  padding-left: 16px;
+  font-size: 19px;
+  line-height: 18px;
+  }
+  }
+  .filter__fieldset--details textarea {
+  margin-top: 0;
+  font-size: 19px;
+  line-height: 18px;
+}
+
+  .filter__container--button {
+  align-items: flex-start;
+  margin-top: 53px;
+  margin-bottom: 50px;
+  justify-content: space-between;
+  & .button {
+  width: 230px;
+  margin: 0;
+  order: -1;
+  }
+  }
+
+  .filter__item {
+  margin-bottom: 25px;
+  }
+
+  .filter__fieldset--phone {
+  padding-bottom: 0px;
+  background-color: @grey-fon;
+  & input {
+  background-color: @grey-fon;
+  }
+  }
+
+  .filter__fieldset--mail {
+  background-color: @grey-fon;
+  & input {
+  background-color: @grey-fon;
+  }
+  }
+}
+
+@media (min-width: @desktop) {
+  .filter {
+  &__container {
+  width: 922px;
+  }
+  &__item {
+  width: 33%;
+  }
+}
 }

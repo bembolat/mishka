@@ -10,11 +10,15 @@
   font-size: 17px;
   line-height: 20px;
   color: @aquamarine;
+  text-transform: uppercase;
   }
   &__text {
   width: 252px;
   font-size: 15px;
   color: @grey;
+  }
+  &__image {
+  width: 100%;
   }
 }
 
@@ -29,9 +33,11 @@ width: 100%;
   &__property {
   width: 40%;
   border-bottom: 1px solid #ececec;
+  padding: 12px 0;
   }
   &__value {
   border-bottom: 1px solid #ececec;
+  padding: 12px 0;
   }
 } 
 
@@ -39,4 +45,81 @@ width: 100%;
   text-align: center;
   font-weight: 700;
   color: @grey;
+}
+
+@media (min-width: @tablet) {
+  .top {
+  width: 768px;
+  padding: 49px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  &__title {
+  font-size: 43px;
+  line-height: 50px;
+  }
+  &__headline {
+  line-height: 17px;
+  text-align: center;
+  width: 130px;
+  }
+  &__info {
+  width: 291px;
+  margin-top: 45px;
+  }
+  &__text {
+  margin-right: 150px;
+  }
+  &__wrap-image {
+  margin-top: -84px;
+  }
+  &__wrap-price {
+  margin-top: -125px;
+  }
+  &__price {
+  font-size: 20px;
+  line-height: 24px;
+  }
+  &__button{
+  width: 291px;
+  margin: 0;
+  }
+  }
+}
+
+@media (min-width: @desktop) {
+  .top {
+  justify-content: flex-end;
+  width: 1050px;
+  margin-top: 72px;
+  padding-right: 0;
+  &__title {
+  padding-right: 240px;
+  font-size: 53px;
+  line-height: 57px;
+  margin-right: 100px;
+  z-index: 1;
+  order: -5;
+  }
+  &__headline {
+  order: -6;
+  }
+  &__wrap-image {
+  margin-top: -107px;
+  order: -3;
+  }
+  &__wrap-price {
+  margin-top: -124px;
+  margin-right: 578px;
+  }
+  &__text {
+  align-self: flex-start;
+  margin-right: 84px;
+  order: -4;
+  }
+  &__info {
+  margin-top: -423px;
+  margin-right: 578px;
+  }
+  }
 }

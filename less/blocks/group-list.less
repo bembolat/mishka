@@ -1,25 +1,47 @@
 .group-list {
-  &__item {
-  position: relative;
-  width: 100%;
-  padding: 28px 0;
-  &:first-child {
-  background: url(..//img/interior.png) no-repeat 238px 17px;
+  &__link {
+  display: flex;
+  justify-content: space-between;
+  padding: 26px;
+  font-size: 19px;
+  line-height: 24px;
+  font-weight: 700;
+  color: white;
   background-color: #63d1bb;
+  opacity: 0.9;
+  & img {
+  height: 62px;
   }
-  &:last-child {
+}
+  &__item {
+  width: 100%;
+  &:last-child .group-list__link {
   background-color: #56c3b2;
   }
   }
 }
 
-.group-list__link {
-  display: inline-block;
-  width: 108px;
-  padding-left: 29px;
-  font-size: 19px;
-  line-height: 24px;
-  font-weight: 700;
-  color: white;
+@media (min-width: @tablet) {
+  .group-list {
+  display: flex;
+  width: 670px;
+  margin: 0 auto;
+  &__link {
+  font-size: 20px;
+  line-height: 30px;
+  &:hover {
+  opacity: 1;
+  }
+  &:active {
+  opacity: 0.8;
+  }
+  }
+  }
+}
 
+@media (min-width: @desktop) {
+  .group-list {
+  width: 1050px;
+  
+  }
 }

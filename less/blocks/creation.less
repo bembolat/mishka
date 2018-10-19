@@ -2,6 +2,7 @@
   width: auto;
   padding: 30px;
   margin-top: 30px;
+  margin-bottom: 58px;
   border: 1px solid #ededed;
   &__wrap-title {
   padding: 25px 0px 25px 85px;
@@ -17,5 +18,54 @@
   font-size: 13px;
   line-height: 24px;
   color: @grey;
+  }
+  &__image {
+  width: 100%;
+  }
+  & .button {
+  margin-top: 20px;
+  }
+}
+
+@media (min-width: @tablet) {
+  .creation {
+  display: flex;
+  flex-direction: column;
+  max-width: 668px;
+  margin: 0 auto;
+  padding: 0;
+  &__wrap-image {
+  order: -1;
+  }
+  &__title {
+  font-size: 20px;
+  }
+  &__text {
+  font-size: 15px;
+  line-height: 30px;
+  }
+  }
+}
+
+@media (min-width: @desktop) {
+  .creation {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  max-width: 1050px;
+  margin-bottom: 105px;
+  &__wrap-title {
+  padding-top: 100px;
+  padding-left: 72px;
+  }
+  &__image {
+  display: block;
+  }
+  &__text {
+  width: 350px;
+  margin-left: auto;
+  margin-top: -280px;
+  padding: 0 60px;
+  }
   }
 }

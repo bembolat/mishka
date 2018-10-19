@@ -38,3 +38,34 @@
 
   }
 }
+
+@media (min-width: @tablet) {
+  .about {
+  width: 768px;
+  padding: 49px;
+  margin: 0 auto;
+  &__title { 
+  font-size: 43px;
+  line-height: 50px;
+  }
+  &__list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 20px;
+  line-height: 22px;
+  }
+  &__item {
+  width: 298px;
+  }
+  }
+}
+
+@media (min-width: @desktop) {
+  .about {
+  &__title {
+  font-size: 53px;
+  line-height: 57px;
+  }
+  }
+}

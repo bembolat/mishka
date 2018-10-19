@@ -9,8 +9,7 @@
   }
 }
 
-.main-nav__toggle,
-.main-nav__close {
+.main-nav__toggle {
   position: absolute;
   top: 30px;
   right: 30px;
@@ -20,13 +19,16 @@
   height: 20px;
   background: 0 0;
   border: 0;
+  &:active {
+  opacity: 0.4;
+  }
 }
 
-.main-nav__toggle {
+.main-nav--closed .main-nav__toggle {
   background: url(..//img/menu.png) no-repeat;
 }
-.main-nav__close {
-  display: none;
+
+.main-nav--opened .main-nav__toggle {
   &::before {
   position: absolute;
   content: "";
@@ -45,4 +47,57 @@
   background-color: black;
   transform: rotate(45deg);
   }
+}
+
+.main-nav a[href] {
+  &:active {
+  opacity: 0.4;
+  }
+}
+
+
+@media (max-width: @mobile) {
+  .main-nav .site-list__item--logo {
+  text-align: center;
+  }
+  .main-nav--closed .site-list__item {
+  display: none;
+  &--logo {
+  display: block;
+  }
+  }
+  .main-nav--opened .site-list__item {
+  display: block;
+  &--new, &--sale, &--delivery  {
+  display: none;
+  }
+  }
+  .main-nav--nojs .main-nav__toggle {
+  display: none;
+  }
+  .main-nav--nojs .site-list__item {
+  display: block;
+  &--new, &--sale, &--delivery  {
+  display: none;
+  }
+  }
+  }
+
+@media (min-width: @tablet) {
+  .main-nav {
+  &__toggle {
+  display: none;
+  }
+  }
+}
+
+@media (min-width: @desktop) {
+  .main-nav a[href] {
+  &:hover {
+  opacity: 0.7;
+  }
+  &:active {
+  opacity: 0.4;
+  }
+}
 }

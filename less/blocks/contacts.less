@@ -6,17 +6,82 @@
   line-height: 30px;
   }
   &__info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   color: @grey;
   font-size: 15px;
   line-height: 30px;
   }
+  &__value {
+  color: @grey;
+  border-bottom: 1px solid @aquamarine;
+  &:hover {
+  color: @aquamarine;
+  }
+  &:active {
+  color: @aquamarine;
+  opacity: 0.3;
+  }
+  }
+  &__adress {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  }
+  &__street {
+  padding-left: auto;
+  text-align: right;
+  }
 }
 
 .contacts__property {
-  width: 40%;
-  vertical-align: top;
+  width: 75%;
 }
 
 .contacts__mail {
-  border-bottom: 1px solid #62d1ba;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+}
+
+@media (min-width: @tablet) {
+  .contacts {
+  width: 768px;
+  margin: 0 auto;
+  padding: 49px;
+  &__title {
+  font-size: 43px;
+  line-height: 50px;
+  }
+  &__mail {
+  width: 50%;
+  }
+  &__value {
+  width: 180px;
+  }
+  &__adress {
+  width: 50%;
+  justify-content: space-around;
+  & p:first-child {
+  padding-left: 50px;
+  }
+  }
+  &__button {
+  width: 230px;
+  }
+  &__street {
+  text-align: left;
+  }
+  }
+}
+
+@media (min-width: @desktop) {
+  .contacts {
+  &__title {
+  font-size: 53px;
+  line-height: 57px;
+  }
+  }
 }

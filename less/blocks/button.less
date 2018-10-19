@@ -11,4 +11,15 @@
   line-height: 20px;
   font-weight: 700;
   text-transform: uppercase;
+  &:active {
+  background-color: @grey;
+  color: #7c7c7c;
+  }
+}
+
+@media (min-width: @desktop) {
+  .button:hover {
+  background-color: @grey;
+  color: white;
+  }
 }

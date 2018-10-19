@@ -7,11 +7,74 @@
   line-height: 30px;color: @black;
   }
   &__text {
- 
   font-size: 15px;
   line-height: 30px;
   }
   &__user {
   font-weight: 700;
+  }
+  &__wrap-toggles {
+  display: flex;
+  width: 100%;
+  margin: 39px 0;
+  min-height: 52px;
+  border: 1px solid #ececec;
+  & button {
+  width: 50%;
+  border: none;
+  background: 0 0;
+  background: url(..//img/right.png) no-repeat center;
+  }
+  }
+  & .comments__button-left {
+  background: url(..//img/left.png) no-repeat center;
+  border-right: 1px solid #ececec;
+  }
+}
+
+@media (min-width: @tablet) {
+  .comments {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 768px;
+  padding: 49px;
+  margin: 0 auto;
+  background: url(..//img/review.jpg) no-repeat left;
+  &__button {
+  width: 175px;
+  order: -1;
+  align-self: flex-start;
+  margin: 0;
+  }
+  &__title {
+  font-size: 43px;
+  line-height: 50px;
+  order: -2;
+  }
+  &__text {
+  font-size: 17px;
+  line-height: 30px;
+  }
+  &__wrap-toggles {
+  width: 174px;
+  margin: 0;
+  border: 0;
+  }
+  & .comments__button-left {
+  border: none;
+  }
+  }
+}
+
+@media (min-width: @desktop) {
+  .comments {
+  width: 1050px;
+  padding-right: 0;
+  padding-left: 187px;
+  &__title {
+  font-size: 53px;
+  line-height: 57px;
+  }
   }
 }
