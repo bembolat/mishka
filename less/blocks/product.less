@@ -22,6 +22,19 @@
   color: @grey;
   border-bottom: 1px solid #ededed;
   }
+  &__price {
+  display: flex;
+  justify-content: space-between;
+  }
+  &__icon {
+  fill: #d5d5d5;
+    &:hover {
+    fill: @aquamarine;
+    }
+    &:active {
+    opacity: 0.3;
+    }
+  }
 }
 
 .product__span {
@@ -71,6 +84,9 @@
   }
   &__image {
   width: 100%;
+  }
+  &__info:hover {
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,.1);
   }
   }
 }

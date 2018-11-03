@@ -8,6 +8,10 @@
   margin-inline-end: 0;
   padding-bottom: 45px;
   border: 0;
+    &--type .filter__label, &--color .filter__label {
+    padding-left: 64px;
+    margin-top: 40px;
+    }
   }
   &__titles {
   position: relative;
@@ -17,7 +21,7 @@
   font-weight: 700;
   text-transform: uppercase;
   overflow: hidden;
-  &::after {
+    &::after {
   content: "";
   position: relative;
   display: inline-block;
@@ -29,6 +33,7 @@
   }
   }
   &__values {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -38,17 +43,21 @@
   &__item {
   padding: 14px 0;
   width: 50%;
+  margin-top: 18px;
+  }
+  &__phone-icon, &__email-icon {
+  position: absolute;
+  right: 5px;
+  fill: #cccccc;
   }
 }
 
 .filter__label {
+  position: relative;
   margin-top: 25px;
   font-weight: 700;
   font-size: 17px;
   line-height: 18px;
-  &--type, &--color {
-  padding-left: 64px;
-  }
 }
 
 .filter__fieldset input[type="text"] {
@@ -67,6 +76,64 @@
   outline: 0;
 }
 
+.filter__radio {
+  &::before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  border: 2px solid @grey;
+  border-radius: 50%;
+  top: -9px;
+  left: 2px;
+  }
+  &:active::before {
+  border-color: #c7c7c7;
+  }
+}
+
+.filter input[type=radio]:checked+label::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-color: @aquamarine;
+  border-radius: 50%;  
+  top: 3px;
+  left: 14px;  
+}
+
+.filter__checkbox {
+  &::before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  border: 2px solid @grey;
+  top: -7px;
+  left: 2px;
+  }
+  &:active::before {
+  border-color: #c7c7c7;
+  }
+}
+
+.filter input[type=checkbox]:checked+label::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 24px;
+  height: 30px;
+  background: url(..//img/icon-tick.svg) no-repeat center; 
+  top: -3px;
+  left: 11px;  
+}
+
+//==============================Tablet version=======================
+
 @media (min-width: @tablet) {
   .filter {
   padding: 0;
@@ -84,7 +151,6 @@
   }
   &__label {
   margin-top: 0;
-  margin-bottom: 60px;
   font-size: 19px;
   &--type, &--color {
   padding-left: 80px;
@@ -176,5 +242,20 @@
   &__item {
   width: 33%;
   }
+  &__radio:hover::before, &__checkbox:hover::before, & input filter__radio:focus::before {
+  border-color: @aquamarine;
+  }
+  &__radio:active::before, &__checkbox:active::before {
+  border-color: #c7c7c7;
+  }
+  & input:hover, & input:focus, & textarea:hover, & textarea:focus {
+    border-color: @aquamarine;
+  }
+  }
+
+  .filter__fieldset--phone:hover .filter__phone-icon,
+  .filter__fieldset--mail:hover .filter__email-icon {
+  fill: @aquamarine;
 }
+
 }

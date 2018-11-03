@@ -1,5 +1,8 @@
 .modal {
   position: fixed;
+  transform: translate(-50%, 50%);
+  left: 50%;
+  right: 50%;
   padding: 36px 30px 46px 30px;
   width: 320px;
   margin: 0 auto;
@@ -24,7 +27,12 @@
   justify-content: center;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.7);
+  animation-name: background;
+  animation-duration: .5s;
   z-index: 2;
+  }
+  &--show {
+  display: block;
   }
 }
 

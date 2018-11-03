@@ -8,8 +8,18 @@
 
 @media (min-width: @tablet) {
   .page-heading {
+  position: relative;
   margin-top: -69px;
   margin-bottom: 50px;
+    &::after {
+  position: absolute;
+  content: "";
+  bottom: -1px;
+  display: block;
+  width: 100%;
+  height: 15px;
+  background: url(..//img/zigzag-fill.svg);
+  }
   &__title {
   font-size: 43px;
   line-height: 50px;

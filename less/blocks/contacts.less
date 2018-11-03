@@ -1,5 +1,8 @@
 .contacts  {
   padding: 32px;
+  &-wrapper {
+  margin-bottom: 40px;
+  }
   &__title {
   margin-top: 0;
   font-size: 18px;
@@ -46,6 +49,35 @@
   width: 100%;
 }
 
+.contacts__map {
+  &-pin {
+  position: absolute;
+  top: 130px;
+  left: 130px;
+  }
+  &-link {
+  position: relative;
+  display: none;
+  width: 320px;
+  height: 100%;
+  margin: 0 auto;
+  margin-bottom: 32px;
+  }
+  &-embed {
+  width: 100%;
+  height: 460px;
+  margin-bottom: 32px;
+  }
+  &--nojs .contacts__map-embed {
+  display: none;
+  }
+  &--nojs .contacts__map-link {
+  display: block;
+  }
+}
+
+//=========================TABLET VERSION================================
+
 @media (min-width: @tablet) {
   .contacts {
   width: 768px;
@@ -57,9 +89,6 @@
   }
   &__mail {
   width: 50%;
-  }
-  &__value {
-  width: 180px;
   }
   &__adress {
   width: 50%;
@@ -74,14 +103,94 @@
   &__street {
   text-align: left;
   }
+  &__info {
+  font-size: 17px;
+  position: relative;
+  &:before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 48px;
+  height: 81px;
+  background: url(..//img/icon-flag.svg) no-repeat;
+  right: 14px;
+  bottom: 142px;
+  }
+  }
+  }
+
+  .contacts__map {
+  width: 768px;
+  margin: 0 auto;
+  margin-bottom: 55px;
+  &-link {
+  width: 100%;
+  margin-bottom: 55px;
+  }
+  &-embed {
+  margin-bottom: 55px;
+  }
+  &-pin {
+  top: 138px;
+  left: 360px;
+  }
   }
 }
 
+//===============================DESKTOP VERSION=====================
+
 @media (min-width: @desktop) {
   .contacts {
+  padding: 0;
+  padding-top: 80px;
+  width: 350px;
+  margin: 0;
+  &-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 1050px;
+  padding-top: 71px;
+  padding-left: 175px;
+  margin: 0 auto;
+  margin-bottom: 105px;
+  }
+  &__mail {
+  width: 86%;
+  }
+  &__adress {
+  width: 100%;
+    & p:first-child {
+  padding-left: 0;
+  }
+  }
+  &__info {
+  &::before {
+  right: 405px;
+  bottom: 245px;
+  }
+  }
   &__title {
   font-size: 53px;
   line-height: 57px;
+  }
+  &__property {
+  width: 57%;
+  }
+  &__button {
+  margin: 0;
+  margin-top: -55px;
+  }
+  &__map {
+  margin: 0;
+  width: 525px;
+  }
+  &__map-pin {
+  left: 240px;
+  }
+  &__map-embed, &__map-link {
+  margin-bottom: 0;
   }
   }
 }

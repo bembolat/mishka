@@ -10,39 +10,53 @@
   padding: 0;
   }
   &__item {
+  position: relative;
   width: 187px;
   padding-top: 54px;
+  padding-bottom: 30px;
   line-height: 20px;
   font-weight: 700;
+  &:before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 41px;
+  height: 34px;
+  top: 0;
+  }
   }
 
 }
 
 .about__item {
   &--eco {
-
+  background: url(..//img/icon-feature-flower.svg) no-repeat;
   }
   &--style {
-
+  background: url(..//img/icon-feature-money.svg) no-repeat;
   }
   &--like {
-
+  background: url(..//img/icon-feature-heart.svg) no-repeat;
   }
   &--love {
   width: 197px;
+  background: url(..//img/icon-feature-ball.svg) no-repeat;
   }
   &--domestic {
   width: 231px;
+  background: url(..//img/icon-feature-rocket.svg) no-repeat;
   }
   &--gift {
-
+  background: url(..//img/icon-feature-gift.svg) no-repeat;
   }
 }
 
 @media (min-width: @tablet) {
   .about {
+  position: relative;
   width: 768px;
   padding: 49px;
+  padding-top: 15px;
   margin: 0 auto;
   &__title { 
   font-size: 43px;
@@ -57,6 +71,7 @@
   }
   &__item {
   width: 298px;
+  padding-bottom: 60px;
   }
   }
 }
