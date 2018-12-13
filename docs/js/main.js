@@ -53,26 +53,36 @@ window.addEventListener("keydown", function (evt) {
 if (blockMap) {
  blockMap.classList.remove("contacts__map--nojs");
 
-   var map;
-function initMap() {
-  var LatLng = { lat: 59.938682, lng: 30.322989 };
-  map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 17,
-    center: LatLng,
-    zoomControl: false,
-    scaleControl: false,
-    scrollwheel: false
-  });
-  var marker = new google.maps.Marker({
-    position: { lat: 59.938682, lng: 30.322989 },
-    map: map,
-    title: "Магазин Мишка",
-    icon: {
-      url: "img/map-pin.png",
-      size: new google.maps.Size(67, 100),
-      origin: new google.maps.Point(0, 0)
+ ymaps.ready(init);
+   var myMap,
+       myPlacemark;
+
+    function init(){ 
+        // Создание карты.    
+            myMap = new ymaps.Map("map", {
+            // Координаты центра карты.
+            // Порядок по умолчанию: «широта, долгота».
+            // Чтобы не определять координаты центра карты вручную,
+            // воспользуйтесь инструментом Определение координат.
+            center: [59.9386,30.3231],
+            // Уровень масштабирования. Допустимые значения:
+            // от 0 (весь мир) до 19.
+            zoom: 17
+        });
+
+        myPlacemark = new ymaps.Placemark ([59.9386,30.3232], {
+            balloonContentHeader: 'Mishka',
+            balloonContentBody: 'Здесь вы найдете вязанные грушки</br>и изделия для дома',
+            balloonContentFooter: 'заходите через центральный вход',
+            hintContent: 'Вязаные изделия',
+          }, {
+            iconLayout: 'default#image',
+            iconImageHref: 'img/map-pin.png',
+            iconImageSize: [34, 46],
+            iconImageOffset: [-16, -45]
+          });
+
+        myMap.geoObjects.add(myPlacemark)
     }
-  });
-}
 }
 // end init map-api
